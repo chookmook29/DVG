@@ -3,9 +3,261 @@
     <head>
         <meta charset="utf-8">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
         <title> </title>
+
     </head>
     <body>
-
+        <br>
+        <br>
+        <br>
+            <p>
+                
+                
+      <label for="select">Soldier #1</label>
+      <select id="select_one" onchange="mySoldier1()">
+        <option value="">Choose...</option>
+        <optgroup label="Player Soldier">
+          <option value="18 11">Schmidt</option>
+          <option value="26 11">Muller</option>
+          <option value="22 10">Koch</option>
+          <option value="15 12">Braun</option>
+          <option value="12 13">Hoffman</option>
+          <option value="10 10">Werner</option>
+          <option value="21 12">Ahrens</option>
+          <option value="14 8">Meier</option>
+          <option value="8 9">Dehmelt</option>
+        </optgroup>
+        <optgroup label="NPS">
+          <option value="">Schuster</option>
+          <option value="">Beck</option>
+          <option value="">Kraus</option>
+        </optgroup>
+        <optgroup label="Squad">
+          <option value="">Option 4</option>
+          <option value="">Option 5</option>
+          <option value="">Option 6</option>
+        </optgroup>
+        <optgroup>
+          <option value="0">None</option>
+        </optgroup>
+      </select>
+      
+      
+            <label for="select">Ranged Weapon</label>
+      <select id="select_ranged_weapon" onchange="myRanged()">
+        <option value="">Choose...</option>
+        <optgroup label="Bolt Action">
+          <option value="1">98k Rifle</option>
+        </optgroup>
+        <optgroup label="Machine Gun">
+          <option value="13">MG 42</option>
+        </optgroup>
+        <optgroup label="Submachine Gun">
+          <option value="2">MP 40</option>
+        </optgroup>
+        <optgroup label="Assault Rifle">
+          <option value="2">StG 44</option>
+        </optgroup>
+        <optgroup label="Rocket Launcher">
+          <option value="1">Panzerschreck</option>
+          <option value="2">Panzerfaust</option>
+        </optgroup>
+        <optgroup>
+          <option value="0">None</option>
+        </optgroup>
+      </select>
+      
+      
+            <label for="select_grenade">Grenades</label>
+      <select id="select_grenade" onchange="myGrenade()">
+        <option value="">Choose...</option>
+        <optgroup label="GE Model 24">
+          <option value="1">x1</option>
+          <option value="2">x2</option>
+          <option value="3">x3</option>
+          <option value="4">x4</option>
+          <option value="5">x5</option>
+        </optgroup>
+        <optgroup>
+          <option value="0">None</option>
+        </optgroup>
+      </select>
+      
+      
+            <label for="select_satchel">
+        <input type="checkbox" value="3" id="select_satchel" onchange="mySatchel(this)"/>
+        Satchel Charge
+      </label>
+            <label for="select_web_gear">
+        <input type="checkbox" value="3" id="select_web_gear" onchange="myWebGear(this)"/>
+        Web Gear
+      </label>
+                  <label for="select_binoculars">
+        <input type="checkbox" value="1" id="select_binoculars" onchange="myBinoculars(this)"/>
+        Binoculars
+      </label>
+                        <label for="select_helmet">
+        <input type="checkbox" value="1" id="select_helmet" onchange="myHelmet(this)"/>
+        Lucky Helmet
+      </label>
+                        <label for="select_boots">
+        <input type="checkbox" value="2" id="select_boots" onchange="myBoots(this)"/>
+        Quality Boots
+      </label>
+      
+      
+      
+    </p>
+    <p id="stats">
+    Stats:
+    </p>
+        <p id="skills">
+    Skills:
+    </p>
+    
+    
+    <p id="result">
+    ...
+    </p>
+    <p id="max_loadout">
+    ...
+    </p>
+    <script>
+        var x = 0;
+        var gCleanUp = 0;
+        var sCleanUp = 0;
+        var wCleanUp = 0;
+        var switchEnabled = false;
+        function mySoldier1(){
+            
+            x = x - sCleanUp;
+            var sPrepare = document.getElementById("select_one").value;
+            var sArray = sPrepare.split(" ");
+            var s = sArray[0];
+            var max_l = sArray[1];
+            sCleanUp = parseInt(s);
+            s = parseInt(s);
+            x = x + s;
+            document.getElementById("result").innerHTML = "Your total points: " + x;
+            document.getElementById("max_loadout").innerHTML = "Your max loadout: " + max_l;
+            
+        }
+        function myRanged(){
+            x = x - wCleanUp;
+            var w = document.getElementById("select_ranged_weapon").value;
+            wCleanUp = parseInt(w);
+            w = parseInt(w);
+            x = x + w;
+            document.getElementById("result").innerHTML = "Your total points: " + x;
+            
+        }
+        function mySatchel(checkbox){
+            if(checkbox.checked == true){
+            
+            var z = document.getElementById("select_satchel").value;
+            z = parseInt(z);
+            x = x + z;
+            document.getElementById("result").innerHTML = "Your total points: " + x;
+            
+            
+            }
+            else {
+            var z = document.getElementById("select_satchel").value;
+            z = parseInt(z);
+            x = x - z;
+            document.getElementById("result").innerHTML = "Your total points: " + x;
+            }
+            
+        }
+        function myGrenade(){
+            x = x - gCleanUp;
+            var g = document.getElementById("select_grenade").value;
+            gCleanUp = parseInt(g);
+            g = parseInt(g);
+            x = x + g;
+            document.getElementById("result").innerHTML = "Your total points: " + x;
+            
+        }
+        function myWebGear(checkbox){
+            if(checkbox.checked == true){
+            
+            var wg = document.getElementById("select_web_gear").value;
+            wg = parseInt(wg);
+            x = x + wg;
+            document.getElementById("result").innerHTML = "Your total points: " + x;
+            
+            
+            }
+            else {
+            var wg = document.getElementById("select_web_gear").value;
+            wg = parseInt(wg);
+            x = x - wg;
+            document.getElementById("result").innerHTML = "Your total points: " + x;
+            }
+            
+        }
+        function myBinoculars(checkbox){
+            if(checkbox.checked == true){
+            
+            var b = document.getElementById("select_binoculars").value;
+            b = parseInt(b);
+            x = x + b;
+            document.getElementById("result").innerHTML = "Your total points: " + x;
+            
+            
+            }
+            else {
+            var b = document.getElementById("select_binoculars").value;
+            b = parseInt(b);
+            x = x - b;
+            document.getElementById("result").innerHTML = "Your total points: " + x;
+            }
+            
+        }
+        function myHelmet(checkbox){
+            if(checkbox.checked == true){
+            
+            var h = document.getElementById("select_helmet").value;
+            h = parseInt(h);
+            x = x + h;
+            document.getElementById("result").innerHTML = "Your total points: " + x;
+            
+            
+            }
+            else {
+            var h = document.getElementById("select_helmet").value;
+            h = parseInt(h);
+            x = x - h;
+            document.getElementById("result").innerHTML = "Your total points: " + x;
+            }
+            
+        }
+        function myBoots(checkbox){
+            if(checkbox.checked == true){
+            
+            var qb = document.getElementById("select_boots").value;
+            qb = parseInt(qb);
+            x = x + qb;
+            document.getElementById("result").innerHTML = "Your total points: " + x;
+            
+            
+            }
+            else {
+            var h = document.getElementById("select_boots").value;
+            qb = parseInt(qb);
+            x = x - qb;
+            document.getElementById("result").innerHTML = "Your total points: " + x;
+            }
+            
+        }
+            
+            
+            
+        
+    </script>
     </body>
 </html>
