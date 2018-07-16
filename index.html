@@ -6,131 +6,257 @@
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <link rel="stylesheet" type="text/css" href="style.css">
+        <style>
+            #main {
+                padding-left: 30%;
+                        }
+                #forms {
+                    font-size: 14px;
+                }
+                #checkboxes {
+                    font-size: 14px;
+                }
+                #summary {
+                    padding-left: 30%;
+                    font-weight: bold;
+                    font-size: 12px;
+                }
+            </style>
         <title> </title>
 
     </head>
     <body>
         <br>
-        <br>
-        <br>
+        
+        <div id="main">
+            <h3 class=".h3">Squad Builder</h3>
             <p>
                 
-                
+       <div id="forms">         
       <label for="select">Soldier #1</label>
       <select id="select_one" onchange="mySoldier1()">
-        <option value="">Choose...</option>
+        <option value="0 0">Choose...</option>
         <optgroup label="Player Soldier">
-          <option value="18 11">Schmidt</option>
-          <option value="26 11">Muller</option>
-          <option value="22 10">Koch</option>
-          <option value="15 12">Braun</option>
-          <option value="12 13">Hoffman</option>
-          <option value="10 10">Werner</option>
-          <option value="21 12">Ahrens</option>
-          <option value="14 8">Meier</option>
-          <option value="8 9">Dehmelt</option>
-        </optgroup>
-        <optgroup label="NPS">
-          <option value="">Schuster</option>
-          <option value="">Beck</option>
-          <option value="">Kraus</option>
-        </optgroup>
-        <optgroup label="Squad">
-          <option value="">Option 4</option>
-          <option value="">Option 5</option>
-          <option value="">Option 6</option>
+          <option value="27 11">Hernandez</option>
+          <option value="19 11">DeLay</option>
+          <option value="14 14">Eandi</option>
+          <option value="8 10">McDougall</option>
+          <option value="10 12">Bailey</option>
+          <option value="9 10">Kasinski</option>
+          <option value="27 12">Williams</option>
+          <option value="21 11">Green</option>
+          <option value="16 11">Jackson</option>
+          <option value="12 13">Turner</option>
+          <option value="10 9">Patel</option>
+          <option value="8 11">Moore</option>
+          <option value="21 13">Bernat</option>
+          <option value="13 10">Freeman</option>
+          <option value="10 10">Brown</option>
         </optgroup>
         <optgroup>
-          <option value="0">None</option>
+          <option value="0 0">None</option>
         </optgroup>
       </select>
+      <br>
       
       
             <label for="select">Ranged Weapon</label>
       <select id="select_ranged_weapon" onchange="myRanged()">
-        <option value="">Choose...</option>
-        <optgroup label="Bolt Action">
-          <option value="1">98k Rifle</option>
+        <option value="0 0">Choose...</option>
+        <optgroup label="Rifles">
+          <option value="2 0">M1 Carbine</option>
+          <option value="2 4">M1 Rifle</option>
+          <option value="2 4">M1903A4 Scoped</option>
         </optgroup>
         <optgroup label="Machine Gun">
-          <option value="13">MG 42</option>
+          <option value="10 7">M1918A2</option>
         </optgroup>
         <optgroup label="Submachine Gun">
-          <option value="2">MP 40</option>
-        </optgroup>
-        <optgroup label="Assault Rifle">
-          <option value="2">StG 44</option>
+          <option value="3 0">M1 SMG</option>
+          <option value="2 0">M3 SMG (1XP)</option>
         </optgroup>
         <optgroup label="Rocket Launcher">
-          <option value="1">Panzerschreck</option>
-          <option value="2">Panzerfaust</option>
+          <option value="1 2">M1A1</option>
+        </optgroup>
+        <optgroup label="Pistols">
+          <option value="2 1">M1911 (1XP)</option>
         </optgroup>
         <optgroup>
-          <option value="0">None</option>
+          <option value="0 0">None</option>
         </optgroup>
       </select>
-      
-      
-            <label for="select_grenade">Grenades</label>
+      <br>
+                  <label for="select_grenade">Grenades</label>
       <select id="select_grenade" onchange="myGrenade()">
-        <option value="">Choose...</option>
-        <optgroup label="GE Model 24">
-          <option value="1">x1</option>
-          <option value="2">x2</option>
-          <option value="3">x3</option>
-          <option value="4">x4</option>
-          <option value="5">x5</option>
-        </optgroup>
-        <optgroup>
+        <option value="0">Choose...</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
           <option value="0">None</option>
         </optgroup>
       </select>
+      <br>
       
       
-            <label for="select_satchel">
-        <input type="checkbox" value="3" id="select_satchel" onchange="mySatchel(this)"/>
+            <label for="select_grenade">Melee</label>
+      <select id="select_melee" onchange="myMelee()">
+        <option value="0">Choose...</option>
+          <option value="1">Bayonet</option>
+          <option value="1">Ka-Bar Knife</option>
+          <option value="1">M3 Knife</option>
+          <option value="0">None</option>
+        </optgroup>
+      </select>
+      <br>
+
+            <label for="select">Skill #1</label>
+      <select id="select_skill1" onchange="mySkill1()">
+        <option value="0">Choose...</option>
+          <option value="2">Spotter</option>
+          <option value="2">Loader</option>
+          <option value="2">Corpsman</option>
+          <option value="4">Fast Reload</option>
+          <option value="-1">Panic</option>
+          <option value="-3">Green</option>
+          <option value="2">Knife Fighter</option>
+          <option value="1">His Number Was Up</option>
+          <option value="3">Agile</option>
+          <option value="2">Rifleman</option>
+          <option value="2">Machine Gunner</option>
+          <option value="3">Close Combat</option>
+          <option value="3">Marksman</option>
+          <option value="3">Focus</option>
+          <option value="3">Guts</option>
+          <option value="6">Veteran</option>
+          <option value="9">Zeroed</option>
+          <option value="2">Captured Gear</option>
+          <option value="5">Leadership</option>
+          <option value="2">Local Knowledge</option>
+          <option value="6">Hunter</option>
+          <option value="2">Overland</option>
+          <option value="4">Stealth Approach</option>
+          <option value="2">Pitcher</option>
+          <option value="2">Pistol & SMG</option>
+          <option value="4">Meat Eater</option>
+          <option value="2">Lucky (1XP)</option>
+          <option value="4">Operator</option>
+          <option value="4">Operator 2</option>
+          <option value="4">Survivor</option>
+          <option value="6">Survivor 2</option>
+          <option value="6">Squared Away</option>
+          <option value="-3">Jitters</option>
+          <option value="6">Cross Training</option>
+      </select>
+      <br>
+
+            <label for="select_chocolate">Chocolate Bars</label>
+      <select id="select_chocolate" onchange="myChocolate()">
+        <option value="0">Choose...</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="0">None</option>
+        </optgroup>
+      </select>
+      <br>
+      </div>
+      <div id="checkboxes">
+            <label for="select_checkbox">
+        <input type="checkbox" value="3" id="select_checkbox1" onchange="myCheckbox1(this)"/>
         Satchel Charge
       </label>
-            <label for="select_web_gear">
-        <input type="checkbox" value="3" id="select_web_gear" onchange="myWebGear(this)"/>
+      
+            <label for="select_checkbox">
+        <input type="checkbox" value="3" id="select_checkbox2" onchange="myCheckbox2(this)"/>
         Web Gear
       </label>
-                  <label for="select_binoculars">
-        <input type="checkbox" value="1" id="select_binoculars" onchange="myBinoculars(this)"/>
+      
+                  <label for="select_checkbox">
+        <input type="checkbox" value="1" id="select_checkbox3" onchange="myCheckbox3(this)"/>
         Binoculars
       </label>
-                        <label for="select_helmet">
-        <input type="checkbox" value="1" id="select_helmet" onchange="myHelmet(this)"/>
+
+                        <label for="select_checkbox">
+        <input type="checkbox" value="1" id="select_checkbox4" onchange="myCheckbox4(this)"/>
         Lucky Helmet
       </label>
-                        <label for="select_boots">
-        <input type="checkbox" value="2" id="select_boots" onchange="myBoots(this)"/>
+      
+                        <label for="select_checkbox">
+        <input type="checkbox" value="2" id="select_checkbox5" onchange="myCheckbox5(this)"/>
         Quality Boots
       </label>
       
+     
+                              <label for="select_checkbox">
+        <input type="checkbox" value="2" id="select_checkbox6" onchange="myCheckbox6(this)"/>
+        Ammo Box
+      </label>
+      <br>
+      
+                              <label for="select_checkbox">
+        <input type="checkbox" value="2" id="select_checkbox7" onchange="myCheckbox7(this)"/>
+        Comfort Box
+      </label>
+      
+                              <label for="select_checkbox">
+        <input type="checkbox" value="2" id="select_checkbox8" onchange="myCheckbox8(this)"/>
+        Camouflage
+      </label>
+     
+      
+     <label for="select_boots">
+        <input type="checkbox" value="1" id="select_checkbox9" onchange="myCheckbox9(this)"/>
+        Canteen
+      </label>
+      <label for="select_boots">
+        <input type="checkbox" value="2" id="select_checkbox10" onchange="myCheckbox10(this)"/>
+        First Aid Kit
+      </label>
+      <label for="select_boots">
+        <input type="checkbox" value="1" id="select_checkbox11" onchange="myCheckbox11(this)"/>
+        Entranching Tool
+      </label>
+      <label for="select_boots">
+        <input type="checkbox" value="1" id="select_checkbox12" onchange="myCheckbox12(this)"/>
+        Breaching Charge
+      </label>
+            <label for="select_boots">
+        <input type="checkbox" value="2" id="select_checkbox13" onchange="myCheckbox13(this)"/>
+        Map
+      </label>
+      </div>
+      </div>
       
       
+      
     </p>
-    <p id="stats">
-    Stats:
-    </p>
-        <p id="skills">
-    Skills:
-    </p>
+    </div>
+    <div id="summary">
+
     
     
     <p id="result">
-    ...
+    Your total points: 0
     </p>
     <p id="max_loadout">
-    ...
+    Your max loadout: 0
     </p>
+    <p id="current_loadout">
+    Your current loadout: 0
+    </p>
+    </div>
     <script>
         var x = 0;
+        var y = 0;
+        var loadout = 0;
+        var s1CleanUp = 0;
         var gCleanUp = 0;
+        var mCleanUp = 0;
+        var cbCleanUp = 0;
         var sCleanUp = 0;
         var wCleanUp = 0;
+        var c_lCleanUp = 0;
         var switchEnabled = false;
         function mySoldier1(){
             
@@ -148,17 +274,25 @@
         }
         function myRanged(){
             x = x - wCleanUp;
-            var w = document.getElementById("select_ranged_weapon").value;
+            y = y - c_lCleanUp;
+            var wPrepare = document.getElementById("select_ranged_weapon").value;
+            var wArray = wPrepare.split(" ");
+            var w = wArray[0];
+            var c_l = wArray[1];
             wCleanUp = parseInt(w);
+            c_lCleanUp = parseInt(c_l);
+            c_l = parseInt(c_l)
             w = parseInt(w);
             x = x + w;
             document.getElementById("result").innerHTML = "Your total points: " + x;
+            y = y + c_l;
+            document.getElementById("current_loadout").innerHTML = "Your current loadout: " + y;
             
         }
-        function mySatchel(checkbox){
+        function myCheckbox1(checkbox){
             if(checkbox.checked == true){
             
-            var z = document.getElementById("select_satchel").value;
+            var z = document.getElementById("select_checkbox1").value;
             z = parseInt(z);
             x = x + z;
             document.getElementById("result").innerHTML = "Your total points: " + x;
@@ -166,7 +300,221 @@
             
             }
             else {
-            var z = document.getElementById("select_satchel").value;
+            var z = document.getElementById("select_checkbox1").value;
+            z = parseInt(z);
+            x = x - z;
+            document.getElementById("result").innerHTML = "Your total points: " + x;
+            }
+            
+        }
+        function myCheckbox2(checkbox){
+            if(checkbox.checked == true){
+            
+            var z = document.getElementById("select_checkbox2").value;
+            z = parseInt(z);
+            x = x + z;
+            document.getElementById("result").innerHTML = "Your total points: " + x;
+            
+            
+            }
+            else {
+            var z = document.getElementById("select_checkbox2").value;
+            z = parseInt(z);
+            x = x - z;
+            document.getElementById("result").innerHTML = "Your total points: " + x;
+            }
+            
+        }
+        function myCheckbox3(checkbox){
+            if(checkbox.checked == true){
+            
+            var z = document.getElementById("select_checkbox3").value;
+            z = parseInt(z);
+            x = x + z;
+            document.getElementById("result").innerHTML = "Your total points: " + x;
+            
+            
+            }
+            else {
+            var z = document.getElementById("select_checkbox3").value;
+            z = parseInt(z);
+            x = x - z;
+            document.getElementById("result").innerHTML = "Your total points: " + x;
+            }
+            
+        }
+        function myCheckbox4(checkbox){
+            if(checkbox.checked == true){
+            
+            var z = document.getElementById("select_checkbox4").value;
+            z = parseInt(z);
+            x = x + z;
+            document.getElementById("result").innerHTML = "Your total points: " + x;
+            
+            
+            }
+            else {
+            var z = document.getElementById("select_checkbox4").value;
+            z = parseInt(z);
+            x = x - z;
+            document.getElementById("result").innerHTML = "Your total points: " + x;
+            }
+            
+        }
+        function myCheckbox5(checkbox){
+            if(checkbox.checked == true){
+            
+            var z = document.getElementById("select_checkbox5").value;
+            z = parseInt(z);
+            x = x + z;
+            document.getElementById("result").innerHTML = "Your total points: " + x;
+            
+            
+            }
+            else {
+            var z = document.getElementById("select_checkbox5").value;
+            z = parseInt(z);
+            x = x - z;
+            document.getElementById("result").innerHTML = "Your total points: " + x;
+            }
+            
+        }
+        function myCheckbox6(checkbox){
+            if(checkbox.checked == true){
+            
+            var z = document.getElementById("select_checkbox6").value;
+            z = parseInt(z);
+            x = x + z;
+            document.getElementById("result").innerHTML = "Your total points: " + x;
+            
+            
+            }
+            else {
+            var z = document.getElementById("select_checkbox6").value;
+            z = parseInt(z);
+            x = x - z;
+            document.getElementById("result").innerHTML = "Your total points: " + x;
+            }
+            
+        }
+        function myCheckbox7(checkbox){
+            if(checkbox.checked == true){
+            
+            var z = document.getElementById("select_checkbox7").value;
+            z = parseInt(z);
+            x = x + z;
+            document.getElementById("result").innerHTML = "Your total points: " + x;
+            
+            
+            }
+            else {
+            var z = document.getElementById("select_checkbox7").value;
+            z = parseInt(z);
+            x = x - z;
+            document.getElementById("result").innerHTML = "Your total points: " + x;
+            }
+            
+        }
+        function myCheckbox8(checkbox){
+            if(checkbox.checked == true){
+            
+            var z = document.getElementById("select_checkbox8").value;
+            z = parseInt(z);
+            x = x + z;
+            document.getElementById("result").innerHTML = "Your total points: " + x;
+            
+            
+            }
+            else {
+            var z = document.getElementById("select_checkbox8").value;
+            z = parseInt(z);
+            x = x - z;
+            document.getElementById("result").innerHTML = "Your total points: " + x;
+            }
+            
+        }
+        function myCheckbox9(checkbox){
+            if(checkbox.checked == true){
+            
+            var z = document.getElementById("select_checkbox9").value;
+            z = parseInt(z);
+            x = x + z;
+            document.getElementById("result").innerHTML = "Your total points: " + x;
+            
+            
+            }
+            else {
+            var z = document.getElementById("select_checkbox9").value;
+            z = parseInt(z);
+            x = x - z;
+            document.getElementById("result").innerHTML = "Your total points: " + x;
+            }
+            
+        }
+        function myCheckbox10(checkbox){
+            if(checkbox.checked == true){
+            
+            var z = document.getElementById("select_checkbox10").value;
+            z = parseInt(z);
+            x = x + z;
+            document.getElementById("result").innerHTML = "Your total points: " + x;
+            
+            
+            }
+            else {
+            var z = document.getElementById("select_checkbox10").value;
+            z = parseInt(z);
+            x = x - z;
+            document.getElementById("result").innerHTML = "Your total points: " + x;
+            }
+            
+        }
+        function myCheckbox11(checkbox){
+            if(checkbox.checked == true){
+            
+            var z = document.getElementById("select_checkbox11").value;
+            z = parseInt(z);
+            x = x + z;
+            document.getElementById("result").innerHTML = "Your total points: " + x;
+            
+            
+            }
+            else {
+            var z = document.getElementById("select_checkbox11").value;
+            z = parseInt(z);
+            x = x - z;
+            document.getElementById("result").innerHTML = "Your total points: " + x;
+            }
+            
+        }function myCheckbox12(checkbox){
+            if(checkbox.checked == true){
+            
+            var z = document.getElementById("select_checkbox12").value;
+            z = parseInt(z);
+            x = x + z;
+            document.getElementById("result").innerHTML = "Your total points: " + x;
+            
+            
+            }
+            else {
+            var z = document.getElementById("select_checkbox12").value;
+            z = parseInt(z);
+            x = x - z;
+            document.getElementById("result").innerHTML = "Your total points: " + x;
+            }
+            
+        }function myCheckbox13(checkbox){
+            if(checkbox.checked == true){
+            
+            var z = document.getElementById("select_checkbox13").value;
+            z = parseInt(z);
+            x = x + z;
+            document.getElementById("result").innerHTML = "Your total points: " + x;
+            
+            
+            }
+            else {
+            var z = document.getElementById("select_checkbox13").value;
             z = parseInt(z);
             x = x - z;
             document.getElementById("result").innerHTML = "Your total points: " + x;
@@ -175,85 +523,45 @@
         }
         function myGrenade(){
             x = x - gCleanUp;
+            y = y - gCleanUp;
             var g = document.getElementById("select_grenade").value;
             gCleanUp = parseInt(g);
             g = parseInt(g);
             x = x + g;
+            y = y + g;
+            document.getElementById("result").innerHTML = "Your total points: " + x;
+            document.getElementById("current_loadout").innerHTML = "Your current loadout: " + y;
+            
+        }
+        function myMelee(){
+            x = x - mCleanUp;
+            y = y - mCleanUp;
+            var m = document.getElementById("select_melee").value;
+            mCleanUp = parseInt(m);
+            m = parseInt(m);
+            x = x + m;
             document.getElementById("result").innerHTML = "Your total points: " + x;
             
         }
-        function myWebGear(checkbox){
-            if(checkbox.checked == true){
-            
-            var wg = document.getElementById("select_web_gear").value;
-            wg = parseInt(wg);
-            x = x + wg;
+        function myChocolate(){
+            x = x - cbCleanUp;
+            var cb = document.getElementById("select_chocolate").value;
+            cbCleanUp = parseInt(cb);
+            cb = parseInt(cb);
+            x = x + cb;
             document.getElementById("result").innerHTML = "Your total points: " + x;
-            
-            
-            }
-            else {
-            var wg = document.getElementById("select_web_gear").value;
-            wg = parseInt(wg);
-            x = x - wg;
-            document.getElementById("result").innerHTML = "Your total points: " + x;
-            }
             
         }
-        function myBinoculars(checkbox){
-            if(checkbox.checked == true){
-            
-            var b = document.getElementById("select_binoculars").value;
-            b = parseInt(b);
-            x = x + b;
+        function mySkill1(){
+            x = x - s1CleanUp;
+            var s1 = document.getElementById("select_skill1").value;
+            s1CleanUp = parseInt(s1);
+            s1 = parseInt(s1);
+            x = x + s1;
             document.getElementById("result").innerHTML = "Your total points: " + x;
-            
-            
-            }
-            else {
-            var b = document.getElementById("select_binoculars").value;
-            b = parseInt(b);
-            x = x - b;
-            document.getElementById("result").innerHTML = "Your total points: " + x;
-            }
             
         }
-        function myHelmet(checkbox){
-            if(checkbox.checked == true){
-            
-            var h = document.getElementById("select_helmet").value;
-            h = parseInt(h);
-            x = x + h;
-            document.getElementById("result").innerHTML = "Your total points: " + x;
-            
-            
-            }
-            else {
-            var h = document.getElementById("select_helmet").value;
-            h = parseInt(h);
-            x = x - h;
-            document.getElementById("result").innerHTML = "Your total points: " + x;
-            }
-            
-        }
-        function myBoots(checkbox){
-            if(checkbox.checked == true){
-            
-            var qb = document.getElementById("select_boots").value;
-            qb = parseInt(qb);
-            x = x + qb;
-            document.getElementById("result").innerHTML = "Your total points: " + x;
-            
-            
-            }
-            else {
-            var h = document.getElementById("select_boots").value;
-            qb = parseInt(qb);
-            x = x - qb;
-            document.getElementById("result").innerHTML = "Your total points: " + x;
-            }
-            
-        }
+
             
             
             
