@@ -19,7 +19,7 @@
                 #summary {
                     font-weight: bold;
                 }
-				.col-lg-4 {
+				//.col-lg-4 {
 				border:1px solid black;
 				}
 
@@ -32,17 +32,27 @@
 	<div class="col-lg-offset-5 col-lg-5 col-sm-offset-5 col-sm-5"></div>
 	<div class="col-lg-2 col-sm-2">
     <h3 class=".h3">Squad Builder</h3>
-	
-	
 	</div>
 	</div>
 	<br>
+	
+	
+	
+	    <div class="row"> 
+	<div class="col-lg-offset-4 col-lg-4 col-sm-offset-4 col-sm-4"></div>
+	<div class="col-lg-3 col-sm-3">
+    <div id="summary"><p id="result_sum">Your total points: 0</p></div>
+	</div>
+	</div>
+	
+	
+	
 	<div class="row">
 		<div class="col-lg-offset-1 col-lg-1 col-sm-offset-1 col-sm-1"></div>
 
     <div class="col-lg-3 col-sm-3" id="summary"> 
 		<p id="result">
-		Your total points: 0
+		Soldier #1 points: 0
 		</p>
 	</div>
 	<div class="col-lg-3 col-sm-3" id="summary">
@@ -211,7 +221,7 @@
         <input type="checkbox" value="1" id="select_checkbox3" onchange="myCheckbox3(this)"/>
         Binoculars
       </label>
-	  <br>
+	  
 
                         <label for="select_checkbox">
         <input type="checkbox" value="1" id="select_checkbox4" onchange="myCheckbox4(this)"/>
@@ -228,7 +238,7 @@
         <input type="checkbox" value="2" id="select_checkbox6" onchange="myCheckbox6(this)"/>
         Ammo Box
       </label>
-      <br>
+      
       
                               <label for="select_checkbox">
         <input type="checkbox" value="2" id="select_checkbox7" onchange="myCheckbox7(this)"/>
@@ -245,7 +255,7 @@
         <input type="checkbox" value="1" id="select_checkbox9" onchange="myCheckbox9(this)"/>
         Canteen
       </label>
-	  <br>
+	  
       <label for="select_boots">
         <input type="checkbox" value="2" id="select_checkbox10" onchange="myCheckbox10(this)"/>
         First Aid Kit
@@ -258,7 +268,6 @@
         <input type="checkbox" value="1" id="select_checkbox12" onchange="myCheckbox12(this)"/>
         Breaching Charge
       </label>
-	  <br>
             <label for="select_boots">
         <input type="checkbox" value="2" id="select_checkbox13" onchange="myCheckbox13(this)"/>
         Map
@@ -419,7 +428,7 @@
         <input type="checkbox" value="1" id="select_checkbox3" onchange="myCheckbox3(this)"/>
         Binoculars
       </label>
-	  <br>
+	  
 
                         <label for="select_checkbox">
         <input type="checkbox" value="1" id="select_checkbox4" onchange="myCheckbox4(this)"/>
@@ -436,7 +445,7 @@
         <input type="checkbox" value="2" id="select_checkbox6" onchange="myCheckbox6(this)"/>
         Ammo Box
       </label>
-      <br>
+      
       
                               <label for="select_checkbox">
         <input type="checkbox" value="2" id="select_checkbox7" onchange="myCheckbox7(this)"/>
@@ -453,7 +462,7 @@
         <input type="checkbox" value="1" id="select_checkbox9" onchange="myCheckbox9(this)"/>
         Canteen
       </label>
-	  <br>
+	  
       <label for="select_boots">
         <input type="checkbox" value="2" id="select_checkbox10" onchange="myCheckbox10(this)"/>
         First Aid Kit
@@ -466,7 +475,7 @@
         <input type="checkbox" value="1" id="select_checkbox12" onchange="myCheckbox12(this)"/>
         Breaching Charge
       </label>
-	  <br>
+	  
             <label for="select_boots">
         <input type="checkbox" value="2" id="select_checkbox13" onchange="myCheckbox13(this)"/>
         Map
@@ -625,7 +634,7 @@
         <input type="checkbox" value="1" id="select_checkbox3" onchange="myCheckbox3(this)"/>
         Binoculars
       </label>
-	  <br>
+	  
 
                         <label for="select_checkbox">
         <input type="checkbox" value="1" id="select_checkbox4" onchange="myCheckbox4(this)"/>
@@ -642,7 +651,7 @@
         <input type="checkbox" value="2" id="select_checkbox6" onchange="myCheckbox6(this)"/>
         Ammo Box
       </label>
-      <br>
+      
       
                               <label for="select_checkbox">
         <input type="checkbox" value="2" id="select_checkbox7" onchange="myCheckbox7(this)"/>
@@ -659,7 +668,7 @@
         <input type="checkbox" value="1" id="select_checkbox9" onchange="myCheckbox9(this)"/>
         Canteen
       </label>
-	  <br>
+	  
       <label for="select_boots">
         <input type="checkbox" value="2" id="select_checkbox10" onchange="myCheckbox10(this)"/>
         First Aid Kit
@@ -672,7 +681,7 @@
         <input type="checkbox" value="1" id="select_checkbox12" onchange="myCheckbox12(this)"/>
         Breaching Charge
       </label>
-	  <br>
+	  
             <label for="select_boots">
         <input type="checkbox" value="2" id="select_checkbox13" onchange="myCheckbox13(this)"/>
         Map
@@ -707,7 +716,7 @@
             sCleanUp = parseInt(s);
             s = parseInt(s);
             x = x + s;
-            document.getElementById("result").innerHTML = "Your total points: " + x;
+            document.getElementById("result").innerHTML = "Soldier #1 points: " + x;
             document.getElementById("max_loadout").innerHTML = "Your max loadout: " + max_l;
             
         }
@@ -723,7 +732,7 @@
             c_l = parseInt(c_l)
             w = parseInt(w);
             x = x + w;
-            document.getElementById("result").innerHTML = "Your total points: " + x;
+            document.getElementById("result").innerHTML = "Soldier #1 points: " + x;
             y = y + c_l;
             document.getElementById("current_loadout").innerHTML = "Your current loadout: " + y;
             
@@ -734,7 +743,7 @@
             var z = document.getElementById("select_checkbox1").value;
             z = parseInt(z);
             x = x + z;
-            document.getElementById("result").innerHTML = "Your total points: " + x;
+            document.getElementById("result").innerHTML = "Soldier #1 points: " + x;
             
             
             }
@@ -742,7 +751,7 @@
             var z = document.getElementById("select_checkbox1").value;
             z = parseInt(z);
             x = x - z;
-            document.getElementById("result").innerHTML = "Your total points: " + x;
+            document.getElementById("result").innerHTML = "Soldier #1 points: " + x;
             }
             
         }
@@ -752,7 +761,7 @@
             var z = document.getElementById("select_checkbox2").value;
             z = parseInt(z);
             x = x + z;
-            document.getElementById("result").innerHTML = "Your total points: " + x;
+            document.getElementById("result").innerHTML = "Soldier #1 points: " + x;
             
             
             }
@@ -760,7 +769,7 @@
             var z = document.getElementById("select_checkbox2").value;
             z = parseInt(z);
             x = x - z;
-            document.getElementById("result").innerHTML = "Your total points: " + x;
+            document.getElementById("result").innerHTML = "Soldier #1 points: " + x;
             }
             
         }
@@ -770,7 +779,7 @@
             var z = document.getElementById("select_checkbox3").value;
             z = parseInt(z);
             x = x + z;
-            document.getElementById("result").innerHTML = "Your total points: " + x;
+            document.getElementById("result").innerHTML = "Soldier #1 points: " + x;
             
             
             }
@@ -778,7 +787,7 @@
             var z = document.getElementById("select_checkbox3").value;
             z = parseInt(z);
             x = x - z;
-            document.getElementById("result").innerHTML = "Your total points: " + x;
+            document.getElementById("result").innerHTML = "Soldier #1 points: " + x;
             }
             
         }
@@ -788,7 +797,7 @@
             var z = document.getElementById("select_checkbox4").value;
             z = parseInt(z);
             x = x + z;
-            document.getElementById("result").innerHTML = "Your total points: " + x;
+            document.getElementById("result").innerHTML = "Soldier #1 points: " + x;
             
             
             }
@@ -796,7 +805,7 @@
             var z = document.getElementById("select_checkbox4").value;
             z = parseInt(z);
             x = x - z;
-            document.getElementById("result").innerHTML = "Your total points: " + x;
+            document.getElementById("result").innerHTML = "Soldier #1 points: " + x;
             }
             
         }
@@ -806,7 +815,7 @@
             var z = document.getElementById("select_checkbox5").value;
             z = parseInt(z);
             x = x + z;
-            document.getElementById("result").innerHTML = "Your total points: " + x;
+            document.getElementById("result").innerHTML = "Soldier #1 points: " + x;
             
             
             }
@@ -814,7 +823,7 @@
             var z = document.getElementById("select_checkbox5").value;
             z = parseInt(z);
             x = x - z;
-            document.getElementById("result").innerHTML = "Your total points: " + x;
+            document.getElementById("result").innerHTML = "Soldier #1 points: " + x;
             }
             
         }
@@ -824,7 +833,7 @@
             var z = document.getElementById("select_checkbox6").value;
             z = parseInt(z);
             x = x + z;
-            document.getElementById("result").innerHTML = "Your total points: " + x;
+            document.getElementById("result").innerHTML = "Soldier #1 points: " + x;
             
             
             }
@@ -832,7 +841,7 @@
             var z = document.getElementById("select_checkbox6").value;
             z = parseInt(z);
             x = x - z;
-            document.getElementById("result").innerHTML = "Your total points: " + x;
+            document.getElementById("result").innerHTML = "Soldier #1 points: " + x;
             }
             
         }
@@ -842,7 +851,7 @@
             var z = document.getElementById("select_checkbox7").value;
             z = parseInt(z);
             x = x + z;
-            document.getElementById("result").innerHTML = "Your total points: " + x;
+            document.getElementById("result").innerHTML = "Soldier #1 points: " + x;
             
             
             }
@@ -850,7 +859,7 @@
             var z = document.getElementById("select_checkbox7").value;
             z = parseInt(z);
             x = x - z;
-            document.getElementById("result").innerHTML = "Your total points: " + x;
+            document.getElementById("result").innerHTML = "Soldier #1 points: " + x;
             }
             
         }
@@ -860,7 +869,7 @@
             var z = document.getElementById("select_checkbox8").value;
             z = parseInt(z);
             x = x + z;
-            document.getElementById("result").innerHTML = "Your total points: " + x;
+            document.getElementById("result").innerHTML = "Soldier #1 points: " + x;
             
             
             }
@@ -868,7 +877,7 @@
             var z = document.getElementById("select_checkbox8").value;
             z = parseInt(z);
             x = x - z;
-            document.getElementById("result").innerHTML = "Your total points: " + x;
+            document.getElementById("result").innerHTML = "Soldier #1 points: " + x;
             }
             
         }
@@ -878,7 +887,7 @@
             var z = document.getElementById("select_checkbox9").value;
             z = parseInt(z);
             x = x + z;
-            document.getElementById("result").innerHTML = "Your total points: " + x;
+            document.getElementById("result").innerHTML = "Soldier #1 points: " + x;
             
             
             }
@@ -886,7 +895,7 @@
             var z = document.getElementById("select_checkbox9").value;
             z = parseInt(z);
             x = x - z;
-            document.getElementById("result").innerHTML = "Your total points: " + x;
+            document.getElementById("result").innerHTML = "Soldier #1 points: " + x;
             }
             
         }
@@ -896,7 +905,7 @@
             var z = document.getElementById("select_checkbox10").value;
             z = parseInt(z);
             x = x + z;
-            document.getElementById("result").innerHTML = "Your total points: " + x;
+            document.getElementById("result").innerHTML = "Soldier #1 points: " + x;
             
             
             }
@@ -904,7 +913,7 @@
             var z = document.getElementById("select_checkbox10").value;
             z = parseInt(z);
             x = x - z;
-            document.getElementById("result").innerHTML = "Your total points: " + x;
+            document.getElementById("result").innerHTML = "Soldier #1 points: " + x;
             }
             
         }
@@ -914,7 +923,7 @@
             var z = document.getElementById("select_checkbox11").value;
             z = parseInt(z);
             x = x + z;
-            document.getElementById("result").innerHTML = "Your total points: " + x;
+            document.getElementById("result").innerHTML = "Soldier #1 points: " + x;
             
             
             }
@@ -922,7 +931,7 @@
             var z = document.getElementById("select_checkbox11").value;
             z = parseInt(z);
             x = x - z;
-            document.getElementById("result").innerHTML = "Your total points: " + x;
+            document.getElementById("result").innerHTML = "Soldier #1 points: " + x;
             }
             
         }function myCheckbox12(checkbox){
@@ -931,7 +940,7 @@
             var z = document.getElementById("select_checkbox12").value;
             z = parseInt(z);
             x = x + z;
-            document.getElementById("result").innerHTML = "Your total points: " + x;
+            document.getElementById("result").innerHTML = "Soldier #1 points: " + x;
             
             
             }
@@ -939,7 +948,7 @@
             var z = document.getElementById("select_checkbox12").value;
             z = parseInt(z);
             x = x - z;
-            document.getElementById("result").innerHTML = "Your total points: " + x;
+            document.getElementById("result").innerHTML = "Soldier #1 points: " + x;
             }
             
         }function myCheckbox13(checkbox){
@@ -948,7 +957,7 @@
             var z = document.getElementById("select_checkbox13").value;
             z = parseInt(z);
             x = x + z;
-            document.getElementById("result").innerHTML = "Your total points: " + x;
+            document.getElementById("result").innerHTML = "Soldier #1 points: " + x;
             
             
             }
@@ -956,7 +965,7 @@
             var z = document.getElementById("select_checkbox13").value;
             z = parseInt(z);
             x = x - z;
-            document.getElementById("result").innerHTML = "Your total points: " + x;
+            document.getElementById("result").innerHTML = "Soldier #1 points: " + x;
             }
             
         }
@@ -968,7 +977,7 @@
             g = parseInt(g);
             x = x + g;
             y = y + g;
-            document.getElementById("result").innerHTML = "Your total points: " + x;
+            document.getElementById("result").innerHTML = "Soldier #1 points: " + x;
             document.getElementById("current_loadout").innerHTML = "Your current loadout: " + y;
             
         }
@@ -978,7 +987,7 @@
             mCleanUp = parseInt(m);
             m = parseInt(m);
             x = x + m;
-            document.getElementById("result").innerHTML = "Your total points: " + x;
+            document.getElementById("result").innerHTML = "Soldier #1 points: " + x;
             
         }
         function myChocolate(){
@@ -987,7 +996,7 @@
             cbCleanUp = parseInt(cb);
             cb = parseInt(cb);
             x = x + cb;
-            document.getElementById("result").innerHTML = "Your total points: " + x;
+            document.getElementById("result").innerHTML = "Soldier #1 points: " + x;
             
         }
         function mySkill1(){
@@ -996,7 +1005,7 @@
             s1CleanUp = parseInt(s1);
             s1 = parseInt(s1);
             x = x + s1;
-            document.getElementById("result").innerHTML = "Your total points: " + x;
+            document.getElementById("result").innerHTML = "Soldier #1 points: " + x;
             
         }
 
