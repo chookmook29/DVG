@@ -41,7 +41,7 @@
 	    <div class="row"> 
 	<div class="col-lg-offset-4 col-lg-4 col-sm-offset-4 col-sm-4"></div>
 	<div class="col-lg-3 col-sm-3">
-    <div id="summary"><p id="result_sum">Your total points: 0</p></div>
+    <div id="summary"><p id="total_result">Your total points: 0</p></div>
 	</div>
 	</div>
 	
@@ -56,23 +56,75 @@
 		</p>
 	</div>
 	<div class="col-lg-3 col-sm-3" id="summary">
+		<p id="result2">
+		Soldier #2 points: 0
+		</p>
+	</div>
+	<div class="col-lg-3 col-sm-3" id="summary">
+		<p id="result3">
+		Soldier #3 points: 0
+		</p>
+	</div>
+    </div>
+	
+	
+		<div class="row">
+		<div class="col-lg-offset-1 col-lg-1 col-sm-offset-1 col-sm-1"></div>
+
+    <div class="col-lg-3 col-sm-3" id="summary"> 
 		<p id="max_loadout">
 		Your max loadout: 0
 		</p>
 	</div>
 	<div class="col-lg-3 col-sm-3" id="summary">
+		<p id="max_loadout2">
+		Your max loadout: 0
+		</p>
+	</div>
+	<div class="col-lg-3 col-sm-3" id="summary">
+		<p id="max_loadout3">
+		Your max loadout: 0
+		</p>
+	</div>
+    </div>
+	
+	
+			<div class="row">
+		<div class="col-lg-offset-1 col-lg-1 col-sm-offset-1 col-sm-1"></div>
+
+    <div class="col-lg-3 col-sm-3" id="summary"> 
 		<p id="current_loadout">
 		Your current loadout: 0
 		</p>
 	</div>
+	<div class="col-lg-3 col-sm-3" id="summary">
+		<p id="current_loadout2">
+		Your current loadout: 0
+		</p>
+	</div>
+	<div class="col-lg-3 col-sm-3" id="summary">
+		<p id="current_loadout3">
+		Your current loadout: 0
+		</p>
+	</div>
     </div>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	<div class="row">
 	<div class="col-lg-offset-1 col-lg-1 col-sm-offset-1 col-sm-1"></div>
 
     <div class="col-lg-3 col-sm-3">            
        <div id="forms">         
       <label for="select">Soldier #1</label>
-      <select id="select_one" onchange="mySoldier1()">
+      <select id="select_soldier" onchange="mySoldier1()">
         <option value="0 0">Choose...</option>
         <optgroup label="Player Soldier">
           <option value="27 11">Hernandez</option>
@@ -279,7 +331,7 @@
 	  <div class="col-lg-3 col-sm-3">            
        <div id="forms">         
       <label for="select">Soldier #2</label>
-      <select id="select_one" onchange="mySoldier1()">
+      <select id="select_soldier2" onchange="mySoldier2()">
         <option value="0 0">Choose...</option>
         <optgroup label="Player Soldier">
           <option value="27 11">Hernandez</option>
@@ -306,7 +358,7 @@
       
       
             <label for="select">Ranged Weapon</label>
-      <select id="select_ranged_weapon" onchange="myRanged()">
+      <select id="select_ranged_weapon2" onchange="myRanged2()">
         <option value="0 0">Choose...</option>
         <optgroup label="Rifles">
           <option value="2 0">M1 Carbine</option>
@@ -485,7 +537,7 @@
 	  	  <div class="col-lg-3 col-sm-3">            
        <div id="forms">         
       <label for="select">Soldier #3</label>
-      <select id="select_one" onchange="mySoldier1()">
+      <select id="select_soldier3" onchange="mySoldier3()">
         <option value="0 0">Choose...</option>
         <optgroup label="Player Soldier">
           <option value="27 11">Hernandez</option>
@@ -696,47 +748,139 @@
     
     <script>
         var x = 0;
+		var x2 = 0;
+		var x3 = 0;
         var y = 0;
+		var y2 = 0;
+		var y3 = 0;
+		var z = 0;
+		var z2 = 0;
+		var z3 = 0;
+		var z_total = 0;
         var loadout = 0;
+		var totalCleanUp = 0;
+		var totalCleanUp2 = 0;
+		var totalCleanUp3 = 0;
         var s1CleanUp = 0;
         var gCleanUp = 0;
         var mCleanUp = 0;
         var cbCleanUp = 0;
         var sCleanUp = 0;
+		var sCleanUp2 = 0;
+		var sCleanUp3 = 0;
         var wCleanUp = 0;
+		var wCleanUp2 = 0;
+		var wCleanUp3 = 0;
         var c_lCleanUp = 0;
+		var c_lCleanUp2 = 0;
+		var c_lCleanUp3 = 0;
         var switchEnabled = false;
+		
         function mySoldier1(){
             
+			z = z - sCleanUp;
+			z_total = z_total - totalCleanUp;//add this for total points
             x = x - sCleanUp;
-            var sPrepare = document.getElementById("select_one").value;
+            var sPrepare = document.getElementById("select_soldier").value;
             var sArray = sPrepare.split(" ");
             var s = sArray[0];
             var max_l = sArray[1];
             sCleanUp = parseInt(s);
+			totalCleanUp = parseInt(s);//add this for total points
             s = parseInt(s);
+			z_total = z_total + s;//add this for total points
             x = x + s;
+			document.getElementById("total_result").innerHTML = "Your total points: " + z_total;//add this for total points
             document.getElementById("result").innerHTML = "Soldier #1 points: " + x;
             document.getElementById("max_loadout").innerHTML = "Your max loadout: " + max_l;
             
         }
+		        function mySoldier2(){
+				
+            z_total = z_total - totalCleanUp2;
+			z2 = z2 - sCleanUp2;
+            x2 = x2 - sCleanUp2;
+            var sPrepare2 = document.getElementById("select_soldier2").value;
+            var sArray2 = sPrepare2.split(" ");
+            var s2 = sArray2[0];
+            var max_l2 = sArray2[1];
+            sCleanUp2 = parseInt(s2);
+			totalCleanUp2 = parseInt(s2);
+            s2 = parseInt(s2);
+			z_total = z_total + s2;
+            x2 = x2 + s2;
+			document.getElementById("total_result").innerHTML = "Your total points: " + z_total;
+            document.getElementById("result2").innerHTML = "Soldier #2 points: " + x2;
+            document.getElementById("max_loadout2").innerHTML = "Your max loadout: " + max_l2;
+            
+        }
+
+			function mySoldier3(){
+				
+            z_total = z_total - totalCleanUp3;
+			z3 = z3 - sCleanUp3;
+            x3 = x3 - sCleanUp3;
+            var sPrepare3 = document.getElementById("select_soldier3").value;
+            var sArray3 = sPrepare3.split(" ");
+            var s3 = sArray3[0];
+            var max_l3 = sArray3[1];
+            sCleanUp3 = parseInt(s3);
+			totalCleanUp3 = parseInt(s3);
+            s3 = parseInt(s3);
+			z_total = z_total + s3;
+            x3 = x3 + s3;
+			document.getElementById("total_result").innerHTML = "Your total points: " + z_total;
+            document.getElementById("result3").innerHTML = "Soldier #3 points: " + x3;
+            document.getElementById("max_loadout3").innerHTML = "Your max loadout: " + max_l3;
+            
+        }
         function myRanged(){
+		
+			z_total = z_total - wCleanUp;//add this for total points
             x = x - wCleanUp;
             y = y - c_lCleanUp;
             var wPrepare = document.getElementById("select_ranged_weapon").value;
             var wArray = wPrepare.split(" ");
             var w = wArray[0];
             var c_l = wArray[1];
-            wCleanUp = parseInt(w);
+            wCleanUp = parseInt(w);//add this for total points
+
             c_lCleanUp = parseInt(c_l);
             c_l = parseInt(c_l)
             w = parseInt(w);
+			z_total = z_total + w;//add this for total points
             x = x + w;
             document.getElementById("result").innerHTML = "Soldier #1 points: " + x;
             y = y + c_l;
+			document.getElementById("total_result").innerHTML = "Your total points: " + z_total;//add this for total points
             document.getElementById("current_loadout").innerHTML = "Your current loadout: " + y;
             
         }
+		
+		        function myRanged2(){
+		
+			z_total = z_total - wCleanUp2;//add this for total points
+            x2 = x2 - wCleanUp2;
+            y2 = y2 - c_lCleanUp2;
+            var wPrepare2 = document.getElementById("select_ranged_weapon2").value;
+            var wArray2 = wPrepare2.split(" ");
+            var w2 = wArray2[0];
+            var c_l2 = wArray2[1];
+            wCleanUp2 = parseInt(w2);//add this for total points
+
+            c_lCleanUp2 = parseInt(c_l2);
+            c_l2 = parseInt(c_l2)
+            w2 = parseInt(w2);
+			z_total = z_total + w2;//add this for total points
+            x2 = x2 + w2;
+            document.getElementById("result2").innerHTML = "Soldier #2 points: " + x2;
+            y2 = y2 + c_l2;
+			document.getElementById("total_result").innerHTML = "Your total points: " + z_total;//add this for total points
+            document.getElementById("current_loadout2").innerHTML = "Your current loadout: " + y2;
+            
+        }
+		
+		
         function myCheckbox1(checkbox){
             if(checkbox.checked == true){
             
@@ -1008,6 +1152,8 @@
             document.getElementById("result").innerHTML = "Soldier #1 points: " + x;
             
         }
+		
+
 
             
             
