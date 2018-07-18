@@ -267,6 +267,52 @@
 		  <option value="2">Warm-Blooded</option>
       </select>
       <br>
+		 <label for="select">Skill #2</label>
+      <select id="select_skillb" onchange="mySkillb()">
+        <option value="0">Choose...</option>
+          <option value="2">Spotter</option>
+          <option value="2">Loader</option>
+          <option value="2">Corpsman</option>
+          <option value="4">Fast Reload</option>
+          <option value="-1">Panic</option>
+          <option value="-3">Green</option>
+          <option value="2">Knife Fighter</option>
+          <option value="1">His Number Was Up</option>
+          <option value="3">Agile</option>
+          <option value="2">Rifleman</option>
+          <option value="2">Machine Gunner</option>
+          <option value="3">Close Combat</option>
+          <option value="3">Marksman</option>
+          <option value="3">Focus</option>
+          <option value="3">Guts</option>
+          <option value="6">Veteran</option>
+          <option value="9">Zeroed</option>
+          <option value="2">Captured Gear</option>
+          <option value="5">Leadership</option>
+          <option value="2">Local Knowledge</option>
+          <option value="6">Hunter</option>
+          <option value="2">Overland</option>
+          <option value="4">Stealth Approach</option>
+          <option value="2">Pitcher</option>
+          <option value="2">Pistol & SMG</option>
+          <option value="4">Meat Eater</option>
+          <option value="2">Lucky (1XP)</option>
+          <option value="4">Operator</option>
+          <option value="4">Operator 2</option>
+          <option value="4">Survivor</option>
+          <option value="6">Survivor 2</option>
+          <option value="6">Squared Away</option>
+          <option value="-3">Jitters</option>
+          <option value="6">Cross Training</option>
+		  <option value="3">Zippo</option>
+		  <option value="2">Rocketeer</option>
+		  <option value="5">Shooter</option>
+		  <option value="4">Ballistics</option>
+		  <option value="4">Splash Damage</option>
+		  <option value="2">Bolt Action</option>
+		  <option value="2">Warm-Blooded</option>
+      </select>
+      <br>
 
             <label for="select_chocolate">Chocolate Bars</label>
       <select id="select_chocolate" onchange="myChocolate()">
@@ -772,6 +818,7 @@
         var x = 0;
 		var x2 = 0;
 		var x3 = 0;
+		var xb = 0;
         var y = 0;
 		var y2 = 0;
 		var y3 = 0;
@@ -784,6 +831,7 @@
 		var totalCleanUp2 = 0;
 		var totalCleanUp3 = 0;
         var saCleanUp = 0;
+		var sbCleanUp = 0;
 		var saCleanUp2 = 0;
 		var saCleanUp3 = 0;
         var gCleanUp = 0;
@@ -1025,6 +1073,19 @@
             sa = parseInt(sa);
 			z_total = z_total + sa;/////
             x = x + sa;
+			document.getElementById("total_result").innerHTML = "Your total points: " + z_total;//add this for total points
+            document.getElementById("result").innerHTML = "Soldier #1 points: " + x;
+            
+        }
+		
+		function mySkillb(){
+			z_total = z_total - sbCleanUp;/////
+            x = x - sbCleanUp;
+            var sb = document.getElementById("select_skillb").value;
+            sbCleanUp = parseInt(sb);
+            sb = parseInt(sb);
+			z_total = z_total + sb;/////
+            x = x + sb;
 			document.getElementById("total_result").innerHTML = "Your total points: " + z_total;//add this for total points
             document.getElementById("result").innerHTML = "Soldier #1 points: " + x;
             
